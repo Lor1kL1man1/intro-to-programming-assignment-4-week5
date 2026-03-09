@@ -18,21 +18,59 @@ memory-lab/
 
 ---
 
-## 🛠️ How to Compile & Run
+You can write it like this so it covers **both cases** (CS50 online environment and local compiler) and stays simple for students:
 
-Each `.c` file can be compiled with:
+---
+
+### 🛠️ How to Compile & Run
+
+#### **Option 1 – Using CS50 Online Environment (cs50.dev)**
+
+If you are working in the **CS50.dev**, use the `make` command:
+
+```bash
+make filename
+./filename
+```
+
+Example:
+
+```bash
+make mario
+./mario
+```
+
+The `make` command automatically compiles the program and links the **CS50 Library** if needed.
+
+---
+
+#### **Option 2 – Using a Local Compiler (GCC)**
+
+If you are compiling on your **local computer**, use **GCC**:
 
 ```bash
 gcc -o output_name filename.c
 ./output_name
 ```
 
-If a file uses the CS50 library:
+Example:
+
+```bash
+gcc -o mario mario.c
+./mario
+```
+
+If the program uses the **CS50 Library**, compile with:
 
 ```bash
 gcc -o output_name filename.c -lcs50
 ./output_name
 ```
+
+---
+
+✅ **Recommendation:**
+For this course, students should primarily use **CS50.dev** and the `make` command.
 
 ---
 
