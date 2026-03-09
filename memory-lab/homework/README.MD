@@ -1,49 +1,75 @@
-# 🧠 Memory in C – Lab Exercises
+# 📝 Homework – Memory Logger
 
-Welcome to the **Memory Lab**! In this lab you will practice working with pointers, memory addresses, string copying, swapping values, and file I/O in C.
+## Overview
 
----
+Build a **Memory Logger** in C that combines everything from today's lab.
 
-## 📁 Repository Structure
-
-```
-memory-lab/
-├── exercises/
-│   ├── 01-pointers/        ← addresses0.c → addresses3.c
-│   ├── 02-string-copy/     ← copy0.c, copy2.c, copy5.c
-│   ├── 03-swap/            ← swap0.c, swap1.c
-│   └── 04-file-io/         ← phonebook1.c, cp.c
-└── homework/               ← memory_logger.c (due next class)
-```
+The program will:
+1. Ask the user for up to **5 words**
+2. Allocate memory for each word using `malloc`
+3. Capitalize the first letter of each word
+4. Save all words to a file called `log.txt`
+5. Free all allocated memory before exiting
 
 ---
 
-## 🛠️ How to Compile & Run
+## Step-by-step Guide
+
+Open `memory_logger.c` and complete all the `TODO` sections in order.
+
+| Step | What to do | Hint |
+|------|-----------|------|
+| 1 | Declare an array of 5 `char *` pointers | `char *words[5];` |
+| 2 | In a loop, read each word with `get_string` | Same as always |
+| 3 | Allocate memory for a copy of each word | `malloc(strlen(word) + 1)` |
+| 4 | Check `malloc` didn't return `NULL` | `return 1` if it did |
+| 5 | Copy the word using `strcpy` | `strcpy(dest, src)` |
+| 6 | Capitalize the first letter | `toupper(words[i][0])` |
+| 7 | Open `log.txt` in write mode | `fopen("log.txt", "w")` |
+| 8 | Write each word to the file | `fprintf(file, "%s\n", words[i])` |
+| 9 | Close the file | `fclose(file)` |
+| 10 | Free each word's memory | `free(words[i])` |
+
+---
+
+## Expected Output
+
+```
+Enter word 1: hello
+Enter word 2: world
+Enter word 3: pointers
+Enter word 4: are
+Enter word 5: fun
+
+Words saved to log.txt!
+```
+
+**Contents of `log.txt`:**
+```
+Hello
+World
+Pointers
+Are
+Fun
+```
+
+---
+
+## Compile & Run
 
 ```bash
-gcc -o output_name filename.c        # plain C
-gcc -o output_name filename.c -lcs50 # if using cs50 library
-./output_name
+gcc -o memory_logger memory_logger.c -lcs50
+./memory_logger
 ```
 
 ---
 
-## ✅ Exercises Overview
+## Checklist before submitting
 
-| # | Topic | Files | Key idea |
-|---|-------|-------|----------|
-| 1 | Pointers & Addresses | `addresses0–3.c` | `&` gives address, `*` dereferences |
-| 2 | String Copying | `copy0, 2, 5.c` | `=` copies the pointer, not the string |
-| 3 | Swap Functions | `swap0, 1.c` | Pass-by-value vs pass-by-pointer |
-| 4 | File I/O | `phonebook1.c`, `cp.c` | `fopen`, `fprintf`, `fread`, `fwrite` |
+- [ ] Compiles without warnings
+- [ ] Handles `NULL` from `malloc` and `fopen`
+- [ ] Capitalizes the first letter of each word
+- [ ] Saves all 5 words to `log.txt`
+- [ ] Frees all allocated memory
 
-Work through each folder in order and read the `README.md` inside before starting.
-
----
-
-## 📝 Homework
-
-See the [`homework/`](./homework/) folder.
-**Due at the start of next class.**
-
-Good luck! 🚀
+Good luck! 💪
