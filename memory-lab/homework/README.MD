@@ -55,12 +55,55 @@ Fun
 
 ---
 
-## Compile & Run
+### 🛠️ How to Compile & Run
+
+#### **Option 1 – Using CS50 Online Environment (cs50.dev)**
+
+If you are working in the **CS50.dev**, use the `make` command:
 
 ```bash
-gcc -o memory_logger memory_logger.c -lcs50
-./memory_logger
+make filename
+./filename
 ```
+
+Example:
+
+```bash
+make mario
+./mario
+```
+
+The `make` command automatically compiles the program and links the **CS50 Library** if needed.
+
+---
+
+#### **Option 2 – Using a Local Compiler (GCC)**
+
+If you are compiling on your **local computer**, use **GCC**:
+
+```bash
+gcc -o output_name filename.c
+./output_name
+```
+
+Example:
+
+```bash
+gcc -o mario mario.c
+./mario
+```
+
+If the program uses the **CS50 Library**, compile with:
+
+```bash
+gcc -o output_name filename.c -lcs50
+./output_name
+```
+
+---
+
+✅ **Recommendation:**
+For this course, students should primarily use **CS50.dev** and the `make` command.
 
 ---
 
