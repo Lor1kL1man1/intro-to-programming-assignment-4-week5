@@ -89,7 +89,7 @@ Complete each exercise in order. Read the comments inside each file — they wil
 
 ## 📝 Homework
 
-See the [`homework/`](./homework/) folder for your take-home assignment.  
+See the [`homework/`](./memory-lab/homework/) folder for your take-home assignment.  
 **It is due at the start of the next class.**
 
 Good luck! 🚀
